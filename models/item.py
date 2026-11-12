@@ -4,8 +4,8 @@
 from odoo import models, fields, api
 
 
-class Product(models.Model):
-    _name = 'dmm.product'
+class Item(models.Model):
+    _name = 'dmm.item'
     _description = 'dmm.dmm'
 
     name = fields.Char()

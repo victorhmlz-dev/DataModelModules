@@ -14,4 +14,4 @@ class Order(models.Model):
     pay_method = fields.Char()
 
     tables = fields.One2many('dmm.table', order)
-    products = fields.Many2many('dmm.product')
+    items = fields.Many2many('dmm.item')
