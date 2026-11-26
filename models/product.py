@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Product(models.Model):
@@ -13,12 +13,4 @@ class Product(models.Model):
     category = fields.Char(string='Categoría')
     disponibility = fields.Boolean(string='Disponible')
 
-    orders = fields.Many2many(
-        'dmm.order',
-        'dmm_order_product_rel',
-        'product_id',
-        'order_id',
-        string='Pedidos'
-    )
-
-
+    orders = fields.Many2many('dmm.order', 'dmm_order_product_rel', string='Pedidos')

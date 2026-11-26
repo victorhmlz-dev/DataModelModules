@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Table(models.Model):
@@ -12,8 +12,4 @@ class Table(models.Model):
     location = fields.Char(string='Ubicación')
     status = fields.Char(string='Estado')
 
-    # Relación con Pedido
     order = fields.Many2one('dmm.order', string='Pedido')
-
-    # Relación con Empleado/Camarero asignado
-    employee = fields.Many2one('res.users', string='Camarero asignado')
