@@ -10,7 +10,7 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "SecondRow",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -24,7 +24,7 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],

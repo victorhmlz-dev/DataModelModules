@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_dmm_dmm,dmm.dmm,model_dmm_dmm,base.group_user,1,1,1,1
+access_dmm_order,dmm.order,model_dmm_order,base.group_user,1,1,1,1
+access_dmm_product,dmm.product,model_dmm_product,base.group_user,1,1,1,1
+access_dmm_table,dmm.table,model_dmm_table,base.group_user,1,1,1,1

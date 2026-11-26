@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
 
-# pyrefly: ignore[missing-import]
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Order(models.Model):
     _name = 'dmm.order'
-    _description = 'dmm.dmm'
+    _description = 'Order'
 
-    date = fields.Date()
-    status = fields.Char()
-    total = fields.float()
-    pay_method = fields.Char()
+    date = fields.Date(string='Fecha')
+    status = fields.Char(string='Estado')
+    total = fields.Float(string='Total')
+    pay_method = fields.Char(string='Método de pago')
 
-    tables = fields.One2many('dmm.table', order)
-    products = fields.Many2many('dmm.product')
+    employee = fields.Many2one('res.users', string='Empleado', required=True)
+    customer = fields.Many2one('res.users', string='Cliente', required=True)
+
+    tables = fields.One2many('dmm.table', 'order', string='Mesas')
+    products = fields.Many2many('dmm.product', 'dmm_order_product_rel', string='Productos')

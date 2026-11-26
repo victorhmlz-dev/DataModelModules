@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 
-# pyrefly: ignore[missing-import]
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Table(models.Model):
     _name = 'dmm.table'
-    _description = 'dmm.dmm'
+    _description = 'Table'
 
-    number = fields.Integer()
-    capacity = fields.Integer()
-    location = fields.Char()
-    status = fields.Char()
+    number = fields.Integer(string='Número')
+    capacity = fields.Integer(string='Capacidad')
+    location = fields.Char(string='Ubicación')
+    status = fields.Char(string='Estado')
 
-    
-    order = fields.Many2one('dmm.order')
+    order = fields.Many2one('dmm.order', string='Pedido')
