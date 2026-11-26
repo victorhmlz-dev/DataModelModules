@@ -4,15 +4,21 @@ from odoo import models, fields, api
 
 
 class Product(models.Model):
-     _name = 'dmm.product'
-     _description = 'dmm.productModel'
+    _name = 'dmm.product'
+    _description = 'Product'
 
-     name = fields.Char()
-     value = fields.Integer()
-     value2 = fields.Float(compute="_value_pc", store=True)
-     description = fields.Text()
+    name = fields.Char(string='Nombre')
+    description = fields.Char(string='Descripción')
+    price = fields.Float(string='Precio')
+    category = fields.Char(string='Categoría')
+    disponibility = fields.Boolean(string='Disponible')
 
-     @api.depends('value')
-     def _value_pc(self):
-         for record in self:
-             record.value2 = float(record.value) / 100
+    orders = fields.Many2many(
+        'dmm.order',
+        'dmm_order_product_rel',
+        'product_id',
+        'order_id',
+        string='Pedidos'
+    )
+
+
